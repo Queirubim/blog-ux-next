@@ -1,7 +1,9 @@
+import { HeaderSection } from './pages/blog-page/headerSection';
+
 export default function Home() {
   return (
-    <main className="h-screen flex items-center justify-center">
-      <h1>Ola Mundo!</h1>
-    </main>
+    <>
+      <HeaderSection />
+    </>
   );
 }

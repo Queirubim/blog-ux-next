@@ -16,7 +16,7 @@ Este é um modelo padrão para projetos Next.js, configurado com Tailwind CSS, Z
 
 ```bash
 
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
+git clone https://github.com/Queirubim/template-next.git
 
   ```
 
