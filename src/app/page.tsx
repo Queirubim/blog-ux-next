@@ -1,9 +1,12 @@
-import { HeaderSection } from './pages/blog-page/headerSection';
+import { Title } from './components/Title';
+
+import { RecentPosts } from './pages/blog-page/RecentPosts';
 
 export default function Home() {
   return (
     <>
-      <HeaderSection />
+      <Title title="ALLAN" />
+      <RecentPosts />
     </>
   );
 }

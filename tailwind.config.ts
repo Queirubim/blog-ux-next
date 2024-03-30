@@ -16,6 +16,7 @@ const config: Config = {
       },
       colors: {
         darkBlue: '#090D1F',
+        purpleDate: '#6941C6',
       },
     },
   },

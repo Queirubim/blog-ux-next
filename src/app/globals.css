@@ -20,12 +20,12 @@
 }
 
 body {
-  @apply dark:bg-darkBlue
+  @apply bg-neutral-200 dark:bg-darkBlue
 }
 
-/* .container {
-  @apply mx-auto w-full max-w-[1500px] px-6
-} */
+.container {
+  @apply mx-auto w-full max-w-[1600px] px-6
+}
 
 *::-webkit-scrollbar {
   width: 6px;

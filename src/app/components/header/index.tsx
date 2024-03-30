@@ -30,7 +30,7 @@ export const Header = () => {
       onMenuOpenChange={setIsMenuOpen}
       maxWidth="2xl"
       position="static"
-      className="py-4 dark:bg-darkBlue"
+      className="py-4 bg-neutral-200 dark:bg-darkBlue container"
     >
       {/* Logo */}
       <NavbarContent justify="start">
@@ -43,11 +43,7 @@ export const Header = () => {
         {/* Links */}
         {menuItems.map((item, index) => (
           <NavbarItem key={`${item}-${index}`}>
-            <HeaderLink
-              // className="w-full"
-              href={item.href}
-              className="text-medium font-bold"
-            >
+            <HeaderLink href={item.href} className="text-medium font-bold">
               {item.name}
             </HeaderLink>
           </NavbarItem>
@@ -64,7 +60,7 @@ export const Header = () => {
       </NavbarContent>
 
       {/* Mobile Menu */}
-      <NavbarMenu className="flex items-center justify-center gap-5 dark:bg-darkBlue">
+      <NavbarMenu className="flex items-center justify-center gap-5 bg-neutral-200 dark:bg-darkBlue">
         {/* Logo */}
         <NavbarBrand className="flex-grow-0">
           <p className="font-semibold text-md">Your Name</p>
