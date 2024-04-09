@@ -6,61 +6,78 @@ import {
   Link,
   Image,
 } from '@nextui-org/react';
-// import Image from 'next/image';
 
+import { DataPost } from 'app/types/post';
 import { cn } from 'lib/merge';
-// import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
+
+import { DataHeader } from '../DataHeader';
 
 type CardPostProps = {
+  post: DataPost;
   cnCard?: string;
   cnImage?: string;
+  cnCover?: string;
+  externalLink?: boolean;
 };
 
-export const CardPost = ({ cnCard, cnImage }: CardPostProps) => {
+export const CardPost = ({
+  post,
+  cnCard,
+  cnImage,
+  cnCover,
+  externalLink = false,
+}: CardPostProps) => {
+  const postAttr = post.attributes;
+  const img = postAttr.cover.data.attributes;
   return (
     <Card
       radius="none"
       shadow="none"
-      className={cn(cnCard, 'bg-transparent gap-4')}
+      className={cn('bg-transparent gap-4 items-start', cnCard)}
     >
-      <CardHeader className={cn(cnImage, `p-0`)}>
+      <CardHeader className={cn(`p-0 overflow-hidden`, cnCover)}>
         <Image
           radius="none"
           width={'100%'}
-          alt="astronauta cultivando"
-          className="object-cover mb-3 overflow-hidden"
-          src="photo.png"
+          alt={img.alternativeText}
+          className={cn(
+            `object-cover mb-3 overflow-hidden object-center`,
+            cnImage,
+          )}
+          src={img.url}
         />
       </CardHeader>
       <CardBody className="p-0">
-        <samp className="text-purpleDate font-semibold text-lg">
-          Sunday | 1 Jan 2023
-        </samp>
+        <DataHeader
+          author={postAttr.author.data.attributes.name}
+          date={postAttr.createdAt}
+        />
         <Link
-          isExternal
           color="foreground"
-          className="text-xl font-bold py-3"
-          href="https://github.com/nextui-org/nextui"
+          className="text-xl font-bold py-3 flex items-center justify-between"
+          href={`/post/${postAttr.slug}`}
         >
-          UX review presentations
+          {postAttr.title}
+          {externalLink && (
+            <samp>
+              <ArrowUpRight />
+            </samp>
+          )}
         </Link>
-        <p className="mb-6">
-          How do you create compelling presentations that wow your colleagues
-          and impress your managers? Lorem ipsum dolor sit, amet consectetur
-          adipisicing elit. Nam molestiae soluta placeat at esse, impedit
-          officiis nostrum, magni laudantium labore libero eaque veritatis
-          mollitia nobis, accusamus tenetur facere beatae aliquam?
+        <p className="mb-6 line-clamp-4 text-sm text-gray-500">
+          {postAttr.shortDescription}
         </p>
-        <div className="flex gap-4">
-          <Chip variant="flat" color="secondary">
-            Tech
-          </Chip>
-          <Chip variant="flat" color="success">
-            Notice
-          </Chip>
-          <Chip variant="flat" color="warning">
-            Communication
-          </Chip>
+        <div className="flex gap-4 flex-wrap">
+          {postAttr.categories.data.map((category, i) => (
+            <Chip
+              key={`${category.attributes.name}-${i}`}
+              variant="flat"
+              color={category.attributes.color}
+            >
+              {category.attributes.name}
+            </Chip>
+          ))}
         </div>
       </CardBody>
     </Card>

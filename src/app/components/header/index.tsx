@@ -18,10 +18,9 @@ import { SwitchLights } from '../SwitchLights';
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuItems = [
-    { name: 'Blog', href: '#' },
-    { name: 'Projects', href: '#' },
-    { name: 'About', href: '#' },
-    { name: 'Newsletter', href: '#' },
+    { name: 'Blog', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Newsletter', href: '/newsletter' },
   ];
 
   return (
@@ -29,7 +28,6 @@ export const Header = () => {
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
       maxWidth="2xl"
-      position="static"
       className="py-4 bg-neutral-200 dark:bg-darkBlue container"
     >
       {/* Logo */}
@@ -69,7 +67,11 @@ export const Header = () => {
         {/* Links */}
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
-            <HeaderLink href={item.href} className="text-medium font-normal">
+            <HeaderLink
+              onClick={() => setIsMenuOpen(false)}
+              href={item.href}
+              className="text-medium font-normal"
+            >
               {item.name}
             </HeaderLink>
           </NavbarMenuItem>

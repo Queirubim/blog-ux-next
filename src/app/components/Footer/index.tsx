@@ -3,10 +3,16 @@ import { Link } from '@nextui-org/react';
 export const Footer = () => {
   const links = [
     { name: 'Twitter', href: '#' },
-    { name: 'Linkedin', href: '#' },
+    {
+      name: 'Linkedin',
+      href: 'https://www.linkedin.com/in/allan-soares-8139b3198/',
+    },
     { name: 'Email', href: '#' },
-    { name: 'GitHub', href: '#' },
-    { name: 'Figma', href: '#' },
+    { name: 'GitHub', href: 'https://github.com/Queirubim' },
+    {
+      name: 'Figma',
+      href: 'https://www.figma.com/community/file/1235152009438565697',
+    },
   ];
 
   return (

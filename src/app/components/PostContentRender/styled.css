@@ -1,0 +1,96 @@
+
+
+.md img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.md h1	{
+  display: block;
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+.md h2	{
+  display: block;
+  font-size: 1.5em;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+.md h3	{
+  display: block;
+  font-size: 1.17em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+.md h4	{
+  display: block;
+  margin-top: 1.33em;
+  margin-bottom: 1.33em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+.md h5	{
+  display: block;
+  font-size: .83em;
+  margin-top: 1.67em;
+  margin-bottom: 1.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+.md h6	{
+  display: block;
+  font-size: .67em;
+  margin-top: 2.33em;
+  margin-bottom: 2.33em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+.md hr	{
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+}
+.md p {
+  margin: 2rem 0;
+}
+.md ul {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+.md ol {
+  margin: 2rem;
+}
+.md pre {
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+  background:#dddddd;
+  color: #333333;
+  padding: 3rem;
+  margin: 3rem 0;
+  line-height: 1.5;
+  font-size: 1.2rem;
+}
+
+.md code {
+  display: flex;
+  width: 30vw;
+}

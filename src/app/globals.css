@@ -24,8 +24,9 @@ body {
 }
 
 .container {
-  @apply mx-auto w-full max-w-[1600px] px-6
+  @apply mx-auto w-full max-w-[1280px] px-6
 }
+
 
 *::-webkit-scrollbar {
   width: 6px;
